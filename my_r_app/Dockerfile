@@ -16,7 +16,6 @@ RUN Rscript -e "install.packages(c('httr', 'jsonlite', 'logger'), repos = 'https
 COPY scripts/* ${LAMBDA_TASK_ROOT}/
 RUN chmod 755 -R ${LAMBDA_TASK_ROOT}/
 
-
 RUN printf '#!/bin/sh\ncd $LAMBDA_TASK_ROOT\nRscript bootstrap.R' > /var/runtime/bootstrap \
   && chmod +x /var/runtime/bootstrap
 
