@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  service:
+    image: "${IMAGE}:${COMMIT_HASH}"
+    platform: "linux/amd64"
+    build:
+      context: .
+      dockerfile: Dockerfile
